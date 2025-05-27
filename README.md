@@ -106,7 +106,7 @@ Ensure paths in `src/config.py` (especially `TRAIN_DATA_DIR`, `VAL_DATA_DIR`, `C
 Key metrics on the validation set:
 *   For detailed per-class AP and other metrics, please see `evaluation_metrics.txt` or the Experience Report.
 
-Sample output images demonstrating the model's detection capabilities on test images can be found in the `DEMO_IMAGES/` folder. These images were generated using `src/predict.py` with the best trained model checkpoint.
+Sample output images demonstrating the model's detection capabilities on test images can be found in the `DEMO_SHOWCASE/` folder. These images were generated using `src/predict.py` with the best trained model checkpoint.
 
 
 [**Briefly mention any standout observations, e.g., "The model performs well on classes like 'helmet' and 'boots' but shows challenges with 'gloves'. The -1 AP for 'Person' and 'Vest' is attributed to their absence in the validation set ground truth."**]
