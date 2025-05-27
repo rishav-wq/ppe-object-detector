@@ -1,0 +1,8 @@
+torch>=1.13 # Or your specific PyTorch version
+torchvision>=0.14 # Or your specific TorchVision version
+numpy>=1.21
+Pillow>=9.0
+matplotlib>=3.5
+opencv-python>=4.5
+pycocotools>=2.0 # Use pycocotools-windows if on Windows and standard fails
+tqdm>=4.60

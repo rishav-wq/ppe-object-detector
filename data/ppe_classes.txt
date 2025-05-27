@@ -1,0 +1,13 @@
+boots
+gloves
+helmet
+Person
+Vest
+Glass
+Mask
+face
+forearm
+head
+Ear-protection
+wirst
+protective clothing

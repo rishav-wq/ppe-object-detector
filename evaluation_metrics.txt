@@ -1,0 +1,64 @@
+## Evaluation Metrics Report
+
+**Model:** PPE Object Detector (ResNet50 + FPN)
+**Dataset Split Evaluated On:** Validation Set 
+**Best Checkpoint Used:** [ ppe_detector_best_epoch11_valloss0.4569.pth]
+**Evaluation Date:** [ May 27, 2025]
+
+---
+
+### Overall Performance Metrics (IoU Thresholds 0.5:0.05:0.95 - COCO Standard)
+
+| Metric              | Value   |
+|---------------------|---------|
+| **mAP (map)**       | 0.4114  |
+| mAP @ IoU=0.50 (map_50) | 0.6237  |
+| mAP @ IoU=0.75 (map_75) | 0.5399  |
+| mAP for small objects (map_small) | 0.0000  |
+| mAP for medium objects (map_medium) | 0.4174  |
+| mAP for large objects (map_large) | 0.5127  |
+| MAR @ Max Dets=1 (mar_1)    | 0.3596  |
+| MAR @ Max Dets=10 (mar_10)  | 0.4446  |
+| MAR @ Max Dets=100 (mar_100)| 0.4446  |
+| MAR (small objects) @ Max Dets=100 (mar_small) | 0.0000  |
+| MAR (medium objects) @ Max Dets=100 (mar_medium) | 0.4483  |
+| MAR (large objects) @ Max Dets=100 (mar_large) | 0.5537  |
+
+---
+
+### Per-Class Average Precision (AP) @ IoU[0.5:0.95]
+
+| Class Name          | AP      | Notes / Observations                                       |
+|---------------------|---------|------------------------------------------------------------|
+| boots               | 0.5810  | Good performance.                                          |
+| gloves              | 0.0688  | Very low performance; a key area for improvement.          |
+| helmet              | 0.5844  | Good performance.                                          |
+| Person              | -1.0000 | No ground truth instances in the validation set.           |
+| Vest                | -1.0000 | No ground truth instances in the validation set.           |
+| ... (Other classes) | [N/A based on provided data] |                                       |
+| **Average (mAP)**   | **0.4114** |                                                            |
+
+*Note: AP = -1.0000 indicates no ground truth instances of that class were present in the validation set for evaluation.*
+
+---
+
+### Per-Class Average Recall (AR) @ Max Dets=100, IoU[0.5:0.95]
+
+| Class Name          | AR      |
+|---------------------|---------|
+| boots               | 0.6241  |
+| gloves              | 0.0715  |
+| helmet              | 0.6383  |
+| Person              | -1.0000 |
+| Vest                | -1.0000 |
+| ... (Other classes) | [N/A based on provided data] |
+
+*Note: AR = -1.0000 indicates no ground truth instances of that class were present in the validation set for evaluation.*
+
+---
+
+### Summary of Key Observations:
+
+*   The model demonstrates a solid overall performance with a primary mAP (COCO standard) of **0.4114** and an mAP@0.5 (Pascal VOC standard) of **0.6237**. This indicates a good general capability for object detection on this task.
+*   Performance is notably strong for 'boots' (AP: 0.5810) and 'helmet' (AP: 0.5844), suggesting the model effectively learned features for these items.
+*   The class 'gloves' shows significantly lower performance (AP: 0.0688), highlighting it as the most challenging class among those evaluated with ground truth presence. This could be attributed to factors such as their typically small size, high variability in appearance, frequent occlusion, or potentially fewer annotated examples in the training set.
